@@ -22,7 +22,6 @@ export class DashboardComponent implements OnInit {
   goToHomepage(user: any) {
     localStorage.setItem('user', JSON.stringify(user));
     this.forumService.user = user;
-    console.log(this.forumService.user);
     this.router.navigate(['/home']);
   }
 }

@@ -14,3 +14,70 @@ td {
 table {
   width: 400px;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  // background: url('https://example.com/path-to-your-admin-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  background: rgb(116 116 116 / 30%);
+}
+
+.forum-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  text-shadow: 1px 0 black;
+  color: whitesmoke;
+}
+
+.user-wrapper {
+  background: rgb(116 116 116 / 61%);
+  border-radius: 10px;
+}
+.users-title {
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 1.25rem;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 1px 0 black;
+}
+
+.instructions {
+  margin-bottom: 1rem;
+  color: whitesmoke;
+}
+
+.user-table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.user-table th,
+.user-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-table tr {
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.user-table tbody tr:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+.user-table th {
+  background-color: rgba(113, 116, 118, 0.8);
+  color: #fff;
+  text-transform: uppercase;
+}

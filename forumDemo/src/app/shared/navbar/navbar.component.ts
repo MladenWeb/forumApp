@@ -19,7 +19,6 @@ export class NavbarComponent implements OnInit {
   }
 
   navigate(url: string, id?: any) {
-    console.log(this.forumService.user);
     id == undefined
       ? this.router.navigate([url])
       : this.router.navigate([url, this.forumService.user.id]);

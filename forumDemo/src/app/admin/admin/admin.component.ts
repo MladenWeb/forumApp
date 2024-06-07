@@ -149,7 +149,6 @@ export class AdminComponent implements OnInit {
     this.forumService.getRolesById(roleId).subscribe((response: any) => {
       this.rights = response.data.rights;
       this.selectedRole = response.data;
-      console.log(this.selectedRole);
       this.roleForm.patchValue({
         role: this.selectedRole.name,
         right: this.selectedRole.rights,

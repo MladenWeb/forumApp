@@ -41,6 +41,9 @@ input {
 
 .wrapper {
   display: flex;
+  padding: 10px;
+  background: rgb(116 116 116 / 61%);
+  border-radius: 10px;
 }
 
 .right-side-items {
@@ -145,4 +148,22 @@ input {
   background-color: white;
   color: black;
   margin: 1rem 0;
+}
+
+.font-style {
+  color: whitesmoke;
+  text-shadow: 1px 0 black;
+}
+
+li {
+  font-weight: 700;
+}
+
+.admin-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  font-size: 2.5rem;
+  text-shadow: 2px 0 black;
 }

@@ -2,10 +2,13 @@
   border: 1px solid silver;
   padding: 1rem;
   border-radius: 6px;
+  color: whitesmoke;
+  text-shadow: 1px 0 black;
   &:hover {
     transition: 0.5s ease;
     background-color: white;
     color: black;
+    text-shadow: 0px;
   }
   h2 {
     margin: 0;
@@ -19,7 +22,21 @@
     }
   }
 }
-
+.user-wrapper {
+  padding: 10px;
+  background: rgb(116 116 116 / 61%);
+  border-radius: 10px;
+  .wellcome-text {
+    color: black;
+  }
+  .topics-text {
+    color: whitesmoke;
+    text-shadow: 2px 0 black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .profile-user {
   right: 2rem;
   top: 2rem;
@@ -36,9 +53,13 @@
   align-items: center;
 }
 
-.head-items {
+.homepage-text {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  font-size: 2.5rem;
+  text-shadow: 2px 0 black;
 }
 
 .comments {
@@ -56,10 +77,13 @@
   border-radius: 6px;
   outline: none;
   border: 1px solid silver;
-  background: darkgoldenrod;
-  color: white;
+  background: white;
+  color: black;
   &:disabled {
     opacity: 0.5;
     cursor: unset;
+  }
+  &:hover {
+    transform: scale(1.01);
   }
 }

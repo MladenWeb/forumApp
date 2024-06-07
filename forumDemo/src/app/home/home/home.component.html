@@ -1,17 +1,26 @@
-<div class="main-wrap">
-  <h1 style="margin: 16px 0">
-    Welcome <span style="color: green">{{ user.name }}</span>
+<div class="main-wrap user-wrapper">
+  <h2 class="homepage-text">HOMEPAGE</h2>
+
+  <h1 style="margin: 16px 0" class="wellcome-text">
+    Welcome
+    <span style="color: whitesmoke; text-shadow: 2px 0 black">{{
+      user.name
+    }}</span>
   </h1>
 
-  <h4>TOPICS</h4>
-
+  <h2 class="topics-text">TOPICS</h2>
+  <br />
   <div
     style="margin-bottom: 1rem; cursor: pointer"
     *ngFor="let topic of topics"
     class="topic-wrap"
     (click)="toggleTopic(topic)"
   >
-    <div class="topic" [style.background]="topic.toggle ? 'white' : ''">
+    <div
+      class="topic"
+      [style.background]="topic.toggle ? 'white' : ''"
+      [style.color]="topic.toggle ? 'black' : ''"
+    >
       <div class="topic-content">
         <div class="header">
           <h2>{{ topic.title }}</h2>
@@ -60,7 +69,14 @@
       [formGroup]="topicForm"
       style="display: flex; flex-direction: column"
     >
-      <label style="margin-bottom: 0.5rem">Title</label>
+      <label
+        style="
+          margin-bottom: 0.5rem;
+          color: whitesmoke;
+          text-shadow: 1px 0 black;
+        "
+        >Title</label
+      >
       <input
         placeholder="Enter topic name"
         formControlName="name"
@@ -74,7 +90,14 @@
         "
         type="text"
       />
-      <label style="margin-bottom: 0.5rem">Description</label>
+      <label
+        style="
+          margin-bottom: 0.5rem;
+          color: whitesmoke;
+          text-shadow: 1px 0 black;
+        "
+        >Description</label
+      >
       <textarea
         style="
           padding-left: 1rem;
@@ -90,8 +113,9 @@
       ></textarea>
 
       <button [disabled]="!topicForm.valid" class="newtopicBtn">
-        Add new topic
+        <h3>ADD NEW TOPIC</h3>
       </button>
     </form>
+      
   </div>
 </div>

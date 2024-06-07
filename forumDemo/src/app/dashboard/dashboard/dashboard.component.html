@@ -1,18 +1,19 @@
-<h2>FORUM</h2>
-<h4 style="margin: 1rem 0; font-size: 20px">Users</h4>
-<p style="margin-bottom: 1rem">Please select user to login</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr (click)="goToHomepage(user)" *ngFor="let user of users">
-      <td>{{ user.name }}</td>
-      <td>{{ user.email }}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="user-wrapper">
+  <h2 class="forum-title">FORUM</h2>
+  <h4 class="users-title">Please select user to login</h4>
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr (click)="goToHomepage(user)" *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+      </tr>
+    </tbody>
+     
+  </table>
+</div>

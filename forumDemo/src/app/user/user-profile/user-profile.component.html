@@ -1,5 +1,14 @@
 <div class="wrapper">
-  <h2 style="margin-bottom: 1rem">Profile page</h2>
+  <h1
+    style="
+      margin-bottom: 1rem;
+      color: whitesmoke;
+      text-shadow: 1px 0 black;
+      text-align: center;
+    "
+  >
+    PROFILE PAGE
+  </h1>
 
   <form
     style="margin-bottom: 1rem"
@@ -7,7 +16,7 @@
     (ngSubmit)="onSubmit()"
   >
     <div class="form-field">
-      <label for="name">Name:</label>
+      <label class="font-style" for="name">Name:</label>
       <input id="name" formControlName="name" />
       <div
         *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched"
@@ -27,7 +36,7 @@
     </div>
 
     <div class="form-field">
-      <label for="password">Password:</label>
+      <label class="font-style" for="password">Password:</label>
       <input type="password" id="password" formControlName="password" />
       <div
         *ngIf="
@@ -40,7 +49,7 @@
     </div>
 
     <div class="form-field">
-      <label for="confirmPassword">Confirm password:</label>
+      <label class="font-style" for="confirmPassword">Confirm password:</label>
       <input
         type="password"
         id="confirmPassword"
@@ -75,7 +84,9 @@
   </p>
 
   <div>
-    <h3 style="margin-bottom: 1rem">Role name: {{ role["name"] }}</h3>
+    <h3 class="font-style" style="margin-bottom: 1rem">
+      Role name: {{ role["name"] }}
+    </h3>
     <ul style="padding-left: 1rem">
       <li
         [ngClass]="{
@@ -113,10 +124,10 @@
   </div>
 
   <div style="margin-top: 1rem">
-    <p style="margin-bottom: 0.5rem; font-weight: bold">
+    <p class="font-style" style="margin-bottom: 0.5rem; font-weight: bold">
       Number of comments: {{ totalComments ? totalComments : 0 }}
     </p>
-    <p style="font-weight: bold">
+    <p class="font-style" style="font-weight: bold">
       Number of topics: {{ topicCount ? topicCount : 0 }}
     </p>
   </div>
