@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ForumService } from '../../forum.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  user: any;
-  constructor() {}
+  constructor(private router: Router, public forumService: ForumService) {}
 
-  ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem('user') || '');
+  ngOnInit() {}
+
+  logout() {
+    localStorage.removeItem('user');
+    this.forumService.user = null;
+    this.router.navigate(['/']);
+  }
+
+  navigate(url: string, id?: any) {
+    console.log(this.forumService.user);
+    id == undefined
+      ? this.router.navigate([url])
+      : this.router.navigate([url, this.forumService.user.id]);
   }
 }

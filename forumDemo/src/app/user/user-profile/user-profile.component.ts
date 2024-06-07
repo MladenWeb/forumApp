@@ -24,6 +24,7 @@ export class UserProfileComponent implements OnInit {
       }
     }
   }
+  user: any;
   userForm!: FormGroup;
   userId: any = null;
   commentCount = 0;
@@ -38,6 +39,8 @@ export class UserProfileComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('user') || '');
+    this.forumService.user = this.user;
     this.setPermissions();
     this.userId = this.activatedRoute.snapshot.params['id'];
     this.userForm = this.fb.group(

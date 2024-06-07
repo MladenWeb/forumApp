@@ -95,6 +95,7 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('user') || '');
+    this.forumService.user = this.user;
     this.roleForm = new FormGroup({
       role: new FormControl('', [Validators.required]),
       right: new FormControl(null, [Validators.required]),

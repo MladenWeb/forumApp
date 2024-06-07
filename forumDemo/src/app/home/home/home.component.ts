@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem('user') || '');
+    this.forumService.user = this.user;
     this.topicForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(1)]),
       description: new FormControl('', [

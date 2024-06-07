@@ -1,9 +1,9 @@
 <nav class="navbar">
   <div class="navbar-brand">My Forum</div>
-  <div class="navbar-links">
-    <a href="/home">Home</a>
-    <a href="/profile">Profile</a>
-    <a href="/admin">Admin</a>
-      
+  <div *ngIf="forumService.user" class="navbar-links">
+    <a (click)="navigate('/home')">Home</a>
+    <a (click)="navigate('/user', '2')">Profile</a>
+    <a (click)="navigate('/admin')">Admin</a>
+    <a (click)="logout()">Logout</a>
   </div>
 </nav>

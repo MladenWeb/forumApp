@@ -11,6 +11,7 @@ export let PERMISSIONS = {
   providedIn: 'root',
 })
 export class ForumService {
+  public user: any;
   public apiUrl = 'http://localhost:8888/api/';
   topicId!: number;
   constructor(private http: HttpClient) {}
