@@ -1,0 +1,163 @@
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+select {
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  option {
+    height: 2rem;
+    cursor: pointer;
+  }
+}
+
+input {
+  padding-left: 0.5rem;
+}
+
+.item-wrap {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 250px;
+  label {
+    font-weight: bold;
+  }
+}
+
+.input-style {
+  width: 100%;
+  height: 2rem;
+  outline: none;
+  border: 0;
+  border: 1px solid silver;
+  border-radius: 6px;
+  padding-right: 0.5rem;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.right-side-items {
+  padding-left: 4rem;
+}
+
+.role-users {
+  border: 1px solid silver;
+  list-style-type: none;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+
+  li {
+    border-bottom: 1px solid silver;
+    cursor: pointer;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+
+.user-actions {
+  margin-bottom: 1rem;
+  button {
+    padding: 10px 18px;
+    border-radius: 6px;
+    outline: none;
+    border: 0;
+    border: 1px solid silver;
+    cursor: pointer;
+    &:first-child {
+      margin-right: 1rem;
+      &:hover {
+        background-color: darkolivegreen;
+        color: white;
+        transition: 0.5s ease;
+      }
+    }
+    &:last-child {
+      &:hover {
+        background-color: crimson;
+        color: white;
+        transition: 0.5s ease;
+      }
+    }
+  }
+}
+
+.backBtn {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 0;
+  border: 1px solid silver;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.updateBtn {
+  cursor: pointer;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  border: 0;
+  border: 1px solid silver;
+  border-radius: 6px;
+  width: fit-content;
+  margin-top: 1rem;
+  &:hover {
+    background-color: cadetblue;
+    transition: 0.5s ease;
+    color: white;
+  }
+}
+
+.hideItem {
+  animation: 2s cssAnimation forwards;
+}
+
+@keyframes cssAnimation {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  list-style-type: none;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+}
+
+.emptyBox {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid silver;
+  background-color: white;
+  color: black;
+  margin: 1rem 0;
+}

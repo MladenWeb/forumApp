@@ -1,0 +1,111 @@
+<div class="main-wrap">
+  <div class="head-items">
+    <h2>HOMEPAGE</h2>
+    <div style="display: flex; align-items: center">
+      <button
+        style="margin-right: 1rem"
+        (click)="goToProfile()"
+        class="profile-user"
+      >
+        User Profile
+      </button>
+      <button (click)="goToAdminPage()" class="profile-user">Admin page</button>
+    </div>
+  </div>
+
+  <h1 style="margin: 16px 0">
+    Welcome <span style="color: green">{{ user.name }}</span>
+  </h1>
+
+  <h4>TOPICS</h4>
+
+  <div
+    style="margin-bottom: 1rem; cursor: pointer"
+    *ngFor="let topic of topics"
+    class="topic-wrap"
+    (click)="toggleTopic(topic)"
+  >
+    <div class="topic" [style.background]="topic.toggle ? 'white' : ''">
+      <div class="topic-content">
+        <div class="header">
+          <h2>{{ topic.title }}</h2>
+          <div>
+            <label style="margin-right: 2rem"
+              >Author: {{ topic.author?.name }}</label
+            >
+            <span
+              style="font-size: 30px; font-weight: 500; color: red"
+              (click)="$event.stopPropagation(); deleteTopic(topic)"
+              >&times;</span
+            >
+          </div>
+        </div>
+        <p>{{ topic?.body }}</p>
+      </div>
+    </div>
+    <div
+      class="comments"
+      (click)="$event.stopPropagation()"
+      *ngIf="topic?.toggle"
+    >
+      <input
+        style="
+          width: -webkit-fill-available;
+          height: 2.5rem;
+          margin-top: 1rem;
+          padding-left: 1rem;
+          outline: none;
+          border: 0;
+          border: 1px solid silver;
+          border-radius: 6px;
+        "
+        type="text"
+        placeholder="Add comment"
+        [(ngModel)]="topic.comment"
+        (keyup.enter)="addComment($event, topic)"
+      />
+      <app-tree-view [topic]="topic"></app-tree-view>
+    </div>
+  </div>
+
+  <div class="add-new-topic">
+    <form
+      (submit)="addTopic()"
+      [formGroup]="topicForm"
+      style="display: flex; flex-direction: column"
+    >
+      <label style="margin-bottom: 0.5rem">Title</label>
+      <input
+        placeholder="Enter topic name"
+        formControlName="name"
+        style="
+          height: 2rem;
+          margin-bottom: 1rem;
+          padding-left: 1rem;
+          border: 1px solid silver;
+          border-radius: 6px;
+          outline: none;
+        "
+        type="text"
+      />
+      <label style="margin-bottom: 0.5rem">Description</label>
+      <textarea
+        style="
+          padding-left: 1rem;
+          padding-top: 1rem;
+          border: 1px solid silver;
+          border-radius: 6px;
+          outline: none;
+        "
+        placeholder="Enter description..."
+        formControlName="description"
+        cols="30"
+        rows="10"
+      ></textarea>
+
+      <button [disabled]="!topicForm.valid" class="newtopicBtn">
+        Add new topic
+      </button>
+    </form>
+  </div>
+</div>
